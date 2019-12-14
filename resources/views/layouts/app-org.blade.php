@@ -22,7 +22,7 @@
         <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav  mr-auto">
+            <ul class="navbar-nav">
                 <li class="nav-item active">
                     <a class="nav-link" href="/">Home</a>
                 </li>
@@ -32,9 +32,6 @@
                 <li class="nav-item active">
                     <a class="nav-link" href="/tasks">Task</a>
                 </li>
-            </ul>
-            <!-- right_nav -->
-            <ul class="navbar-nav">
                 <li class="nav-item active">
                         {!! Form::model(null, [
                             'route' => 'logout', 'method' => 'post', 'class' => 'form-horizontal'
@@ -42,7 +39,7 @@
                         {!! Form::submit('logout', ['class' => 'btn btn-default']) !!}
                         {!! Form::close() !!}
                 </li>                
-            </ul>            
+            </ul>
         </div>
         <hr />
     </nav>    

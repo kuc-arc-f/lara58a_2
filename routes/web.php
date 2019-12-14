@@ -15,7 +15,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 //tasks
+//Route::get('/tasks/data1', 'TasksController@data1');
 Route::resource('tasks', 'TasksController');
+//
+Route::resource('books', 'BooksController');
+Route::resource('members', 'MembersController');
 
 //
 Auth::routes();

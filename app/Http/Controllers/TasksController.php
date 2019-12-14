@@ -16,7 +16,7 @@ class TasksController extends Controller
     public function index()
     {
 //var_dump("#index");
-        $tasks = Task::orderBy('updated_at', 'desc')->paginate(5);
+        $tasks = Task::orderBy('id', 'desc')->paginate(10 );
         return view('tasks/index')->with('tasks', $tasks);
     }    
     /**************************************
@@ -87,6 +87,22 @@ class TasksController extends Controller
         $task = Task::find($id);
         $task->delete();
         return redirect()->route('tasks.index');
+    }  
+    /**************************************
+     *
+     **************************************/
+    public function data1(){
+        for($i = 1; $i <= 100; $i++){
+            $data = array(
+                'title' => "title-" . $i,
+                "content" => "content-" . $i,
+            );
+            $task = new Task();
+            $task->fill($data );
+            $task->save();
+        }
+//debug_dump($data);
+exit();
     }    
 
 
