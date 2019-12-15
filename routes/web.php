@@ -20,6 +20,7 @@ Route::resource('tasks', 'TasksController');
 //
 Route::resource('books', 'BooksController');
 Route::resource('members', 'MembersController');
+Route::resource('depts', 'DeptsController');
 
 //
 Auth::routes();

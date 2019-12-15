@@ -24,6 +24,7 @@ class MembersController extends Controller
                 ->join('depts','depts.id','=','members.dept_id')
                 ->paginate(5);
         //->get();
+        // ->join('depts','depts.id','=','members.dept_id')
         // ->leftJoin()
     foreach ($members as $member ){
 //var_dump($member->id);
