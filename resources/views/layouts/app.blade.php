@@ -32,6 +32,12 @@
                 <li class="nav-item active">
                     <a class="nav-link" href="/tasks">Task</a>
                 </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="/depts">Depts</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="/members">Members</a>
+                </li>                                
             </ul>
             <!-- right_nav -->
             <ul class="navbar-nav">
