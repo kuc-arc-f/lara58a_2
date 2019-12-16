@@ -21,17 +21,14 @@
             @foreach ($depts as $dept)
                 <tr>
                     <td class="table-text">{{ $dept->id }}
-
                     </td>
                     <td class="table-text">
                         {{ link_to_route('depts.show', $dept->name, $dept->id) }}
                     </td>
-                    <!--
                     <td class="table-text">
-                        {{ link_to_route('members.edit', '編集'
-                        , $dept->id, ['class' => 'btn btn-sm btn-default']) }}
+                        {{ link_to_route('depts.edit', '編集'
+                        , $dept->id, ['class' => 'btn btn-sm btn-primary']) }}
                     </td>
-                    -->
                 </tr>
             @endforeach
             </tbody>
@@ -39,7 +36,6 @@
         <!-- paginater -->
         {{ $depts->links() }}        
         <br />
-
         <br />
         <hr />
         {{ link_to_route('depts.create', 'Create' ,null, ['class' => 'btn btn-primary']) }}

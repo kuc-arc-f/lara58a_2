@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', "$task->nameの編集")
+@section('title', "編集")
 
 @section('content')
 
@@ -11,23 +11,41 @@
         </div>
         <hr />
         <div class="panel-body">
-            {!! Form::model($task, ['route' => ['tasks.update', $task->id], 'method' => 'patch', 
+            {!! Form::model($dept, ['route' => ['depts.update', $dept->id], 'method' => 'patch', 
             'class' => 'form-horizontal']) !!}
                 <div class="form-group">
-                    {!! Form::label('title', 'title', ['class' => 'col-sm-3 control-label']) !!}
+                    {!! Form::label('name', 'name', ['class' => 'col-sm-3 control-label']) !!}
                     <div class="col-sm-6">
-                        {!! Form::text('title', $task->title, [
-                            'id' => 'task-title', 'class' => 'form-control'
+                        {!! Form::text('name', $dept->name, [
+                            'id' => 'dept-name', 'class' => 'form-control'
                         ]) !!}
                     </div>
                 </div>
-                <div class="form-group">
-                    {!! Form::label('content', 'content', ['class' => 'col-sm-3 control-label']) !!}
-                    <div class="col-sm-6">
-                        {!! Form::text('content', $task->content, [
-                            'id' => 'task-content', 'class' => 'form-control'
-                        ]) !!}
+                <hr />
+                <?php
+                ?>
+                <h3>member:</h3>
+                <div class="member_wrap">
+                <?php for($i=1 ; $i <= 5 ; $i++){ 
+                    $member_name = "";
+                    $member_id = $i;
+                    if(isset($members[$i-1])){
+                        $member_name = $members[$i-1]->name;
+                        $member_id = $members[$i-1]->id;
+                        // /debug_dump($members[$i-1]->name );
+                    }
+                    $member_label = "name-" . $i;
+                    ?>
+                    <div class="form-group">
+                        {!! Form::label($member_label, $member_label, ['class' => 'col-sm-3 control-label']) !!}
+                        <div class="col-sm-6">
+                            {!! Form::text("member[{$member_id}]", $member_name, [
+                                    'class' => "form-control"  ]) 
+                            !!}                    
+        
+                        </div>
                     </div>
+                <?php } ?>                    
                 </div>
 
                 <div class="form-group">
@@ -41,7 +59,7 @@
         <hr />
         <br />
         <div class="panel-footer">
-            {{ link_to_route('tasks.index', '戻る') }}
+            {{ link_to_route('depts.index', '戻る') }}
         </div>
     </div>
 
